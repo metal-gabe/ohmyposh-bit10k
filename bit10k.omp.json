@@ -32,7 +32,7 @@
                "foreground": "#19191a",
                "powerline_symbol": "",
                "style": "powerline",
-               "template": " {{.Context}}{{if .Namespace}} :: {{.Namespace}}{{end}} ",
+               "template": " {{.Context}}{{if .Namespace}} :: {{.Namespace}}{{end}} ⎈ ",
                "type": "kubectl"
             },
             {
@@ -109,11 +109,11 @@
                "powerline_symbol": "",
                "properties": {
                   "fetch_package_manager": true,
-                  "npm_icon": " <#cc3a3a>\ue5fa</> ",
+                  "npm_icon": " <#cc3a3a> </> ",
                   "yarn_icon": " <#348cba>\ue6a7</>"
                },
                "style": "powerline",
-               "template": " {{ if .PackageManagerIcon }}{{ .PackageManagerIcon }} {{ end }}{{ .Full }} ",
+               "template": " {{ .PackageManagerIcon }}{{ .Full }}   ",
                "type": "node"
             },
             {
@@ -171,9 +171,10 @@
                "type": "julia"
             },
             {
-               "foreground": "#9c1006",
-               "style": "plain",
-               "template": "<#a89883>(</>{{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }}<#a89883>)</>",
+               "background": "#d80c56",
+               "foreground": "#19191a",
+               "style": "powerline",
+               "template": " {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }}   ",
                "type": "ruby"
             },
             {
