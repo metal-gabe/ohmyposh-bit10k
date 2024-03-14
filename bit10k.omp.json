@@ -173,6 +173,7 @@
             {
                "background": "#d80c56",
                "foreground": "#19191a",
+               "powerline_symbol": "",
                "style": "powerline",
                "template": " {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }}   ",
                "type": "ruby"
@@ -188,17 +189,6 @@
                "style": "plain",
                "template": "<#a89883>(</>{{.Profile}}{{if .Region}}@{{.Region}}{{end}}<#a89883>)</>",
                "type": "aws"
-            },
-            {
-               "foreground": "#a89883",
-               "properties": {
-                  "linux": "<#a89883>\ue27f</>",
-                  "macos": "<#a89883>\ue27f</>",
-                  "windows": "<#a89883>\ue27f</>"
-               },
-               "style": "plain",
-               "template": "<#a89883>(</>{{ if .WSL }}WSL at {{ end }}{{.Icon}}<#a89883>)\u2500</>",
-               "type": "os"
             },
             {
                "foreground": "#a89883",
