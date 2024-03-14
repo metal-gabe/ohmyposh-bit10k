@@ -84,6 +84,9 @@
             },
             {
                "background": "#87c723",
+               "background_templates": [
+                  "{{ if .Working.Changed }}#e7c400{{ end }}"
+               ],
                "foreground": "#19191a",
                "powerline_symbol": "",
                "properties": {
