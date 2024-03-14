@@ -36,6 +36,14 @@
                "type": "kubectl"
             },
             {
+               "background": "#ff9900",
+               "foreground": "#19191a",
+               "powerline_symbol": "",
+               "style": "powerline",
+               "template": " {{.Profile}}{{if .Region}}@{{.Region}}{{end}} ",
+               "type": "aws"
+            },
+            {
                "foreground": "#a89883",
                "style": "plain",
                "template": "\u2500\u256e",
@@ -185,28 +193,6 @@
                "type": "azfunc"
             },
             {
-               "foreground": "#faa029",
-               "style": "plain",
-               "template": "<#a89883>(</>{{.Profile}}{{if .Region}}@{{.Region}}{{end}}<#a89883>)</>",
-               "type": "aws"
-            },
-            {
-               "foreground": "#a89883",
-               "foreground_templates": [
-                  "{{if eq \"Charging\" .State.String}}#40c4ff{{end}}",
-                  "{{if eq \"Discharging\" .State.String}}#fffb38{{end}}",
-                  "{{if eq \"Full\" .State.String}}#33dd2d{{end}}"
-               ],
-               "properties": {
-                  "charged_icon": "\uf240 ",
-                  "charging_icon": "\uf1e6 ",
-                  "discharging_icon": "\ue234 "
-               },
-               "style": "plain",
-               "template": "<#a89883>[</>{{ if not .Error }}{{ .Icon }}{{ .Percentage }}{{ end }}{{ .Error }}%<#a89883>]\u2500</>",
-               "type": "battery"
-            },
-            {
                "foreground": "#a89883",
                "style": "plain",
                "template": "\u035e\ufe31",
@@ -226,7 +212,9 @@
             },
             {
                "foreground": "#53c007",
-               "foreground_templates": ["{{ if gt .Code 0 }}#ef5350{{ end }}"],
+               "foreground_templates": [
+                  "{{ if gt .Code 0 }}#ef5350{{ end }}"
+               ],
                "properties": {
                   "always_enabled": true
                },
@@ -240,6 +228,22 @@
          "alignment": "right",
          "type": "prompt",
          "segments": [
+            {
+               "foreground": "#a89883",
+               "foreground_templates": [
+                  "{{if eq \"Charging\" .State.String}}#40c4ff{{end}}",
+                  "{{if eq \"Discharging\" .State.String}}#fffb38{{end}}",
+                  "{{if eq \"Full\" .State.String}}#33dd2d{{end}}"
+               ],
+               "properties": {
+                  "charged_icon": "\uf240 ",
+                  "charging_icon": "\uf1e6 ",
+                  "discharging_icon": "\ue234 "
+               },
+               "style": "plain",
+               "template": "<#a89883>[</> {{ if not .Error }}{{ .Icon }} {{ .Percentage }}{{ end }}{{ .Error }}% ⚡<#a89883>]\u2500</>",
+               "type": "battery"
+            },
             {
                "background": "#9bbe55",
                "foreground": "#19191a",
