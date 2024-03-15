@@ -6,6 +6,14 @@
       "foreground": "#19191a",
       "template": "\u2500>$"
    },
+   "transient_prompt": {
+      "background": "transparent",
+      "foreground": "#a89883",
+      "foreground_templates": [
+         "{{ if gt .Code 0 }}#ef5350{{ end }}"
+      ],
+      "template": ">$ "
+   },
    "blocks": [
       {
          "alignment": "left",
