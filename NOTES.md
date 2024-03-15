@@ -8,3 +8,6 @@ These are resources accrued while creating this theme.
 
 - [OhMyPosh Schema](https://github.com/JanDeDobbeleer/oh-my-posh/blob/main/themes/schema.json)
 
+- [https://github.com/JanDeDobbeleer/oh-my-posh/blob/main/themes/atomicBit.omp.json](atomicBit, the
+inspiration for this theme)
+

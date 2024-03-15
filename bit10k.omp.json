@@ -1,6 +1,11 @@
 {
    "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
    "version": 2,
+   "secondary_prompt": {
+      "background": "transparent",
+      "foreground": "#19191a",
+      "template": "\u2500>$"
+   },
    "blocks": [
       {
          "alignment": "left",
@@ -229,7 +234,8 @@
       },
       {
          "alignment": "right",
-         "type": "prompt",
+         "overflow": "hide",
+         "type": "rprompt",
          "segments": [
             {
                "foreground": "#a89883",
