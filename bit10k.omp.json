@@ -312,7 +312,7 @@
                "foreground": "#19191a",
                "leading_diamond": "",
                "style": "diamond",
-               "template": " {{ if .LatestTag }}{{ .LatestTag }} 🏷 {{ end }} ",
+               "template": " {{ if .LatestTag }}{{ .LatestTag }}{{ end }} ",
                "type": "git"
             },
             {
