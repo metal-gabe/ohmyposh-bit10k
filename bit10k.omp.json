@@ -165,7 +165,7 @@
                   "{{ if gt .Behind 0 }}#c777cc{{ end }}",
                   "{{ if gt .Ahead 0 }}#00c7ff{{ end }}",
                   "{{ if gt .StashCount 0 }}#aa1133{{ end }}",
-                  "{{ if .Staging.Changed }}#fd5a1e{{ end }}",
+                  "{{ if .Staging.Changed }}#e07719{{ end }}",
                   "{{ if .Working.Changed }}#e7c400{{ end }}"
                ],
                "foreground": "#19191a",
@@ -186,7 +186,7 @@
                   "fetch_status": true
                },
                "style": "plain",
-               "template": "{{ if or (.Working.Changed) (.Staging.Changed) (gt .StashCount 0) }}<#a89883>\u2500(</>{{ if .Working.Changed }}<#e7c400>   {{ .Working.String }}</>{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }}<#a89883> |</>{{ end }}{{ if .Staging.Changed }}<#fd5a1e>   {{ .Staging.String }}</>{{ end }}{{ if gt .StashCount 0 }}<#aa1133>   {{ .StashCount }}</>{{ end }}<#a89883> )</>{{ end }}",
+               "template": "{{ if or (.Working.Changed) (.Staging.Changed) (gt .StashCount 0) }}<#a89883>\u2500(</>{{ if .Working.Changed }}<#e7c400>   {{ .Working.String }}</>{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }}<#a89883> |</>{{ end }}{{ if .Staging.Changed }}<#e07719>   {{ .Staging.String }}</>{{ end }}{{ if gt .StashCount 0 }}<#aa1133>   {{ .StashCount }}</>{{ end }}<#a89883> )</>{{ end }}",
                "type": "git"
             }
          ]
