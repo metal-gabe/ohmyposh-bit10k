@@ -307,7 +307,7 @@
                   "home_enabled": false
                },
                "style": "diamond",
-               "template": " {{ if .Error }}{{ .Error }}{{ else }}{{ if .Version }}{{ .Version }}{{ else }} N/A{{ end }}{{ end }}   ",
+               "template": " {{ if .Error }}{{ .Error }}{{ else }}{{ if .Version }}{{ .Version }}  {{ end }}{{ end }} ",
                "type": "project"
             },
             {
