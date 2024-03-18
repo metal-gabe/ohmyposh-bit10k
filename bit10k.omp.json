@@ -287,7 +287,7 @@
                "foreground": "#ffeb3b",
                "style": "plain",
                "properties": {
-                  "display_mode": "files",
+                  "display_mode": "always",
                   "fetch_version": true,
                   "home_enabled": true
                },
