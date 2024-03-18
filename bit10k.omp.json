@@ -277,7 +277,7 @@
                   "fetch_version": true,
                   "home_enabled": true
                },
-               "template": "<#a89883>(</> {{ .Version }} ⎈ <#a89883>)\u2500</>",
+               "template": "{{ if .Version }}<#a89883>(</> {{ .Version }} ⎈ <#a89883>)\u2500</>{{ end }}",
                "type": "helm"
             },
             {
