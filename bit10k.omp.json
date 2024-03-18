@@ -407,8 +407,8 @@
                "type": "rust"
             },
             {
-               "background": "#86c623",
-               "foreground": "#19191a",
+               "background": "#19191a",
+               "foreground": "#86c623",
                "leading_diamond": "",
                "properties": {
                   "display_mode": "always",
