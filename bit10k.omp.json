@@ -29,9 +29,18 @@
             { "--comment": "—————————————————————[ user, host, & ssh ]—————————————————————" },
             {
                "background": "#19191a",
+               "foreground": "#c95110",
                "leading_diamond": "",
                "style": "diamond",
-               "template": " <#c95110>{</> <#00c7ff>{{ .UserName }}</> <#c95110>@</><#72cba2>{{ .HostName }} </><#c95110>}</> ",
+               "template": " [ {{ .Name }} {{ .Version }} ]",
+               "trailing_diamond": "",
+               "type": "shell"
+            },
+            {
+               "background": "#19191a",
+               "foreground": "#c95110",
+               "style": "diamond",
+               "template": "{ <#00c7ff>{{ .UserName }}</> @<#72cba2>{{ .HostName }}</> } ",
                "trailing_diamond": "",
                "type": "session"
             },
@@ -39,7 +48,7 @@
                "background": "#c386f1",
                "foreground": "#ffffff",
                "style": "diamond",
-               "template": "{{ if .SSHSession }}<#a89883>\u2500(</> SSH of {{ .UserName }}@{{ .HostName }}  <#a89883>)</>{{ end }}",
+               "template": "{{ if .SSHSession }} SSH in {{ .UserName }}@{{ .HostName }}  {{ end }}",
                "trailing_diamond": "",
                "type": "session"
             }
@@ -75,7 +84,7 @@
                "leading_diamond": "",
                "style": "diamond",
                "template": " {{ .Context }}   ",
-               "trailing_diamond": "\ue0b4",
+               "trailing_diamond": "",
                "type": "docker"
             },
             { "--comment": "—————————————————————[ end-of-line symbols ]—————————————————————" },
@@ -145,7 +154,7 @@
                   "github_icon": "\uf408 "
                },
                "style": "diamond",
-               "template": " {{ .UpstreamIcon }}{{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }} {{ if .LatestTag }}({{ .LatestTag }} 🏷){{ end }} ",
+               "template": " {{ .UpstreamIcon }}{{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }} ",
                "trailing_diamond": "",
                "type": "git"
             },
@@ -271,7 +280,16 @@
                "type": "project"
             },
             {
-               "foreground": "#055b9c",
+               "background": "#f7cf9f",
+               "foreground": "#19191a",
+               "leading_diamond": "",
+               "style": "diamond",
+               "template": " {{ if .LatestTag }}{{ .LatestTag }} 🏷 {{ end }} ",
+               "type": "git"
+            },
+            {
+               "background": "#055b9c",
+               "foreground": "#19191a",
                "leading_diamond": "",
                "properties": {
                   "display_mode": "files",
@@ -284,7 +302,7 @@
             },
             {
                "background": "#06a4ce",
-               "foreground": "#ffffff",
+               "foreground": "#19191a",
                "leading_diamond": "",
                "properties": {
                   "display_mode": "files",
@@ -296,7 +314,8 @@
                "type": "flutter"
             },
             {
-               "foreground": "#359a25",
+               "background": "#359a25",
+               "foreground": "#19191a",
                "leading_diamond": "",
                "properties": {
                   "display_mode": "files",
@@ -306,6 +325,19 @@
                "style": "diamond",
                "template": " {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }}  ",
                "type": "julia"
+            },
+            {
+               "background": "#906cff",
+               "foreground": "#19191a",
+               "leading_diamond": "",
+               "properties": {
+                  "display_mode": "files",
+                  "fetch_version": true,
+                  "home_enabled": false
+               },
+               "style": "diamond",
+               "template": " {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} <b>K</b> ",
+               "type": "kotlin"
             },
             {
                "background": "#0000ff",
@@ -321,6 +353,19 @@
                "type": "lua"
             },
             {
+               "background": "#81a1c1",
+               "foreground": "#19191a",
+               "leading_diamond": "",
+               "properties": {
+                  "display_mode": "files",
+                  "fetch_version": true,
+                  "home_enabled": false
+               },
+               "style": "diamond",
+               "template": " {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }}   ",
+               "type": "react"
+            },
+            {
                "background": "#d80c56",
                "foreground": "#19191a",
                "leading_diamond": "",
@@ -330,11 +375,12 @@
                   "home_enabled": false
                },
                "style": "diamond",
-               "template": " {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }}   ",
+               "template": " {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }}  ",
                "type": "ruby"
             },
             {
-               "foreground": "#925837",
+               "background": "#925837",
+               "foreground": "#19191a",
                "leading_diamond": "",
                "properties": {
                   "display_mode": "files",
@@ -359,7 +405,7 @@
                },
                "style": "diamond",
                "template": "{{ if .Error }}{{ .Error }}{{ else }}{{ .PackageManagerIcon }} {{ .Full }} (same?: {{ if .Mismatch }}no{{ else }}yes{{ end }}){{ end }}  ",
-               "trailing_diamond": "\ue0b4",
+               "trailing_diamond": "",
                "type": "node"
             },
             { "--comment": "—————————————————————[ end-of-line symbols ]—————————————————————" },
@@ -433,6 +479,19 @@
                "type": "battery"
             },
             {
+               "background": "#00897b",
+               "background_templates": ["{{ if .Error }}#e91e63{{ end }}"],
+               "foreground": "#ffffff",
+               "leading_diamond": "",
+               "properties": {
+                  "always_enabled": true,
+                  "status_template": "{{ if eq .Code 0 }}\uf00c{{ else }}\uf071 {{ reason .Code }}{{ end }}"
+               },
+               "style": "diamond",
+               "template": "  ",
+               "type": "status"
+            },
+            {
                "background": "#9bbe55",
                "foreground": "#19191a",
                "leading_diamond": "",
@@ -441,7 +500,7 @@
                },
                "style": "diamond",
                "template": " {{ .CurrentDate | date .Format }}  ",
-               "trailing_diamond": "\ue0b4",
+               "trailing_diamond": "",
                "type": "time"
             },
             { "--comment": "—————————————————————[ end-of-line symbols ]—————————————————————" },
