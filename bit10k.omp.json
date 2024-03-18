@@ -169,6 +169,9 @@
                   "{{ if .Working.Changed }}#e7c400{{ end }}"
                ],
                "foreground": "#19191a",
+               "foreground_templates": [
+                  "{{ if gt .Ahead 0 }}#c9c9c9{{ end }}"
+               ],
                "properties": {
                   "branch_icon": "\ue725 ",
                   "fetch_status": true,
