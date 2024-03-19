@@ -170,7 +170,7 @@
                ],
                "foreground": "#19191a",
                "foreground_templates": [
-                  "{{ if gt .Ahead 0 }}#c9c9c9{{ end }}"
+                  "{{ if gt .Ahead 0 }}#000000{{ end }}"
                ],
                "properties": {
                   "branch_icon": "\ue725 ",
