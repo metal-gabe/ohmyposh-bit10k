@@ -457,6 +457,19 @@
                "--comment": "—————————————————————[ exit status ]—————————————————————"
             },
             {
+               "foreground_templates": [
+                  "{{ if .Error }}#ef5350{{ end }}"
+               ],
+               "foreground": "#53c007",
+               "properties": {
+                  "always_enabled": true,
+                  "status_template": "{{ if eq .Code 0 }}\uf00c {{ .Code }}{{ else }}\uf071 {{ reason .Code }} {{ .Code }}{{ end }}"
+               },
+               "style": "plain",
+               "template": "<#a89883>[</> {{ if eq .Code 0 }}\uF00C {{ .Code }}{{ else }}\uF071 {{ reason .Code }} {{ .Code }}{{ end }}  <#a89883>]\u2500</>",
+               "type": "status"
+            },
+            {
                "foreground": "#53c007",
                "foreground_templates": [
                   "{{ if gt .Code 0 }}#ef5350{{ end }}"
@@ -507,21 +520,6 @@
                "style": "plain",
                "template": "<#a89883>[</> {{ if not .Error }}{{ .Icon }} {{ .Percentage }}{{ end }}{{ .Error }}% ⚡<#a89883>]\u2500</>",
                "type": "battery"
-            },
-            {
-               "background": "#00897b",
-               "background_templates": [
-                  "{{ if .Error }}#e91e63{{ end }}"
-               ],
-               "foreground": "#ffffff",
-               "leading_diamond": "",
-               "properties": {
-                  "always_enabled": true,
-                  "status_template": "{{ if eq .Code 0 }}\uf00c{{ else }}\uf071 {{ reason .Code }}{{ end }}"
-               },
-               "style": "diamond",
-               "template": "  ",
-               "type": "status"
             },
             {
                "background": "#9bbe55",

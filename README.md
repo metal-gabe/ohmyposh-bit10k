@@ -12,7 +12,7 @@ The theme is organized as follows:
 
 ## Block 1: User Info
 
-This shows the `host @username` 
+This shows the `[ shell shellVersion ] { host @username }` 
 
 ## Block 2: Cloud Info
 
