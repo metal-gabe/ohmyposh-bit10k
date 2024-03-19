@@ -458,9 +458,9 @@
             },
             {
                "foreground_templates": [
-                  "{{ if .Error }}#ef5350{{ end }}"
+                  "{{ if .Error }}#e91e63{{ end }}"
                ],
-               "foreground": "#53c007",
+               "foreground": "#00897b",
                "properties": {
                   "always_enabled": true,
                   "status_template": "{{ if eq .Code 0 }}\uf00c {{ .Code }}{{ else }}\uf071 {{ reason .Code }} {{ .Code }}{{ end }}"
