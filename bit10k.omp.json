@@ -151,7 +151,7 @@
                "background": "#549ce2",
                "foreground": "#19191a",
                "properties": {
-                  "home_icon": " ~",
+                  "home_icon": "  ~",
                   "style": "folder"
                },
                "style": "diamond",
