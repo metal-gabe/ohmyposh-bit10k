@@ -4,39 +4,29 @@
    "secondary_prompt": {
       "background": "transparent",
       "foreground": "#c9c9c9",
-      "foreground_templates": [
-         "{{ if gt .Code 0 }}#ef5350{{ end }}"
-      ],
+      "foreground_templates": ["{{ if gt .Code 0 }}#ef5350{{ end }}"],
       "template": "\u2500>$"
    },
    "transient_prompt": {
       "background": "transparent",
       "foreground": "#a89883",
-      "foreground_templates": [
-         "{{ if gt .Code 0 }}#ef5350{{ end }}"
-      ],
-      "template": ">$ "
+      "foreground_templates": ["{{ if gt .Code 0 }}#ef5350{{ end }}"],
+      "template": "❯$ "
    },
    "blocks": [
-      {
-         "--comment": "—————————————————————[ BLOCK 1: USER INFO ]—————————————————————"
-      },
+      { "--comment": "—————————————————————[ BLOCK 1: USER INFO ]—————————————————————" },
       {
          "alignment": "left",
          "type": "prompt",
          "segments": [
-            {
-               "--comment": "—————————————————————[ start-of-line symbols ]—————————————————————"
-            },
+            { "--comment": "—————————————————————[ start-of-line symbols ]—————————————————————" },
             {
                "foreground": "#a89883",
                "style": "plain",
-               "template": "\u256d\u2500",
+               "template": "╭─",
                "type": "session"
             },
-            {
-               "--comment": "—————————————————————[ user, host, & ssh ]—————————————————————"
-            },
+            { "--comment": "—————————————————————[ user, host, & ssh ]—————————————————————" },
             {
                "background": "#19191a",
                "foreground": "#c95110",
@@ -64,18 +54,14 @@
             }
          ]
       },
-      {
-         "--comment": "—————————————————————[ BLOCK 2: CLOUD INFO ]—————————————————————"
-      },
+      { "--comment": "—————————————————————[ BLOCK 2: CLOUD INFO ]—————————————————————" },
       {
          "alignment": "right",
          "filler": "\u00b7",
          "overflow": "hide",
          "type": "prompt",
          "segments": [
-            {
-               "--comment": "—————————————————————[ kubectl, aws, & docker ]—————————————————————"
-            },
+            { "--comment": "—————————————————————[ kubectl, aws, & docker ]—————————————————————" },
             {
                "background": "#d80c56",
                "foreground": "#19191a",
@@ -107,31 +93,25 @@
             {
                "foreground": "#a89883",
                "style": "plain",
-               "template": "\u2500\u256e",
+               "template": "─╮",
                "type": "session"
             }
          ]
       },
-      {
-         "--comment": "—————————————————————[ BLOCK 3: WORKING INFO ]—————————————————————"
-      },
+      { "--comment": "—————————————————————[ BLOCK 3: WORKING INFO ]—————————————————————" },
       {
          "alignment": "left",
          "newline": true,
          "type": "prompt",
          "segments": [
-            {
-               "--comment": "—————————————————————[ start-of-line symbols ]—————————————————————"
-            },
+            { "--comment": "—————————————————————[ start-of-line symbols ]—————————————————————" },
             {
                "foreground": "#a89883",
                "style": "plain",
-               "template": "|\u2500",
+               "template": "├─",
                "type": "session"
             },
-            {
-               "--comment": "—————————————————————[ os, path, & git ]—————————————————————"
-            },
+            { "--comment": "—————————————————————[ os, path, & git ]—————————————————————" },
             {
                "background": "#19191a",
                "leading_diamond": "",
@@ -151,10 +131,11 @@
                "background": "#549ce2",
                "foreground": "#19191a",
                "properties": {
-                  "home_icon": "  ~",
+                  "home_icon": " ~",
                   "style": "folder"
                },
                "style": "diamond",
+               "template": " {{ if eq .Location \"/Users/gabriel\" }}{{ .Path }}{{ else }} {{ .Path }}{{ end }} ",
                "trailing_diamond": "",
                "type": "path"
             },
@@ -169,9 +150,7 @@
                   "{{ if .Working.Changed }}#e7c400{{ end }}"
                ],
                "foreground": "#19191a",
-               "foreground_templates": [
-                  "{{ if gt .Ahead 0 }}#000000{{ end }}"
-               ],
+               "foreground_templates": ["{{ if gt .Ahead 0 }}#000000{{ end }}"],
                "properties": {
                   "branch_icon": "\ue725 ",
                   "fetch_status": true,
@@ -194,18 +173,14 @@
             }
          ]
       },
-      {
-         "--comment": "—————————————————————[ BLOCK 4: LANGUAGE INFO ]—————————————————————"
-      },
+      { "--comment": "—————————————————————[ BLOCK 4: LANGUAGE INFO ]—————————————————————" },
       {
          "alignment": "right",
          "filler": " \u00b7 ",
          "overflow": "hide",
          "type": "prompt",
          "segments": [
-            {
-               "--comment": "—————————————————————[ secondary languages ]—————————————————————"
-            },
+            { "--comment": "—————————————————————[ secondary languages ]—————————————————————" },
             {
                "foreground": "#5398c2",
                "style": "plain",
@@ -294,9 +269,7 @@
                "template": "<#a89883>(</> {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }}   <#a89883>)\u2500</>",
                "type": "npm"
             },
-            {
-               "--comment": "—————————————————————[ primary languages ]—————————————————————"
-            },
+            { "--comment": "—————————————————————[ primary languages ]—————————————————————" },
             {
                "background": "#51b8d1",
                "foreground": "#19191a",
@@ -393,7 +366,7 @@
                   "home_enabled": false
                },
                "style": "diamond",
-               "template": " {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }}  ",
+               "template": " {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }}   ",
                "type": "ruby"
             },
             {
@@ -422,44 +395,34 @@
                   "yarn_icon": " <#348cba>\ue6a7</> "
                },
                "style": "diamond",
-               "template": "{{ if .Error }}{{ .Error }}{{ else }}{{ .PackageManagerIcon }} {{ .Full }}{{ end }}  ",
+               "template": "{{ if .Error }}{{ .Error }}{{ else }}{{ .PackageManagerIcon }} {{ .Full }}{{ end }}  ",
                "trailing_diamond": "",
                "type": "node"
             },
-            {
-               "--comment": "—————————————————————[ end-of-line symbols ]—————————————————————"
-            },
+            { "--comment": "—————————————————————[ end-of-line symbols ]—————————————————————" },
             {
                "foreground": "#a89883",
                "style": "plain",
-               "template": "\u2500|",
+               "template": "─┤",
                "type": "text"
             }
          ]
       },
-      {
-         "--comment": "—————————————————————[ BLOCK 5: USER ENTRY ]—————————————————————"
-      },
+      { "--comment": "—————————————————————[ BLOCK 5: USER ENTRY ]—————————————————————" },
       {
          "alignment": "left",
          "newline": true,
          "type": "prompt",
          "segments": [
-            {
-               "--comment": "—————————————————————[ start-of-line symbols ]—————————————————————"
-            },
+            { "--comment": "—————————————————————[ start-of-line symbols ]—————————————————————" },
             {
                "style": "plain",
-               "template": "\u2570\u2500",
+               "template": "╰─",
                "type": "text"
             },
+            { "--comment": "—————————————————————[ exit status ]—————————————————————" },
             {
-               "--comment": "—————————————————————[ exit status ]—————————————————————"
-            },
-            {
-               "foreground_templates": [
-                  "{{ if .Error }}#e91e63{{ end }}"
-               ],
+               "foreground_templates": ["{{ if .Error }}#e91e63{{ end }}"],
                "foreground": "#00897b",
                "properties": {
                   "always_enabled": true,
@@ -471,29 +434,23 @@
             },
             {
                "foreground": "#53c007",
-               "foreground_templates": [
-                  "{{ if gt .Code 0 }}#ef5350{{ end }}"
-               ],
+               "foreground_templates": ["{{ if gt .Code 0 }}#ef5350{{ end }}"],
                "properties": {
                   "always_enabled": true
                },
                "style": "plain",
-               "template": "\ue285$ ",
+               "template": "❯$ ",
                "type": "status"
             }
          ]
       },
-      {
-         "--comment": "—————————————————————[ BLOCK 6: STATUS INFO ]—————————————————————"
-      },
+      { "--comment": "—————————————————————[ BLOCK 6: STATUS INFO ]—————————————————————" },
       {
          "alignment": "right",
          "overflow": "hide",
          "type": "rprompt",
          "segments": [
-            {
-               "--comment": "—————————————————————[ execution, battery, & date/time ]—————————————————————"
-            },
+            { "--comment": "—————————————————————[ execution, battery, & date/time ]—————————————————————" },
             {
                "foreground": "#903ec3",
                "properties": {
@@ -533,12 +490,10 @@
                "trailing_diamond": "",
                "type": "time"
             },
-            {
-               "--comment": "—————————————————————[ end-of-line symbols ]—————————————————————"
-            },
+            { "--comment": "—————————————————————[ end-of-line symbols ]—————————————————————" },
             {
                "style": "plain",
-               "template": "\u2500\u256f",
+               "template": "─╯",
                "type": "text"
             }
          ]
