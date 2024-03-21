@@ -158,7 +158,7 @@
                   "github_icon": "\uf408 "
                },
                "style": "diamond",
-               "template": " {{ .UpstreamIcon }}{{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }} ",
+               "template": " {{ if .UpstreamGone }} {{ else }}{{ .UpstreamIcon }}{{ end }}{{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }} ",
                "trailing_diamond": "",
                "type": "git"
             },
@@ -288,7 +288,7 @@
                "foreground": "#19191a",
                "leading_diamond": "",
                "style": "diamond",
-               "template": " {{ if .LatestTag }}{{ .LatestTag }}{{ end }} ",
+               "template": " {{ if .LatestTag }}{{ .LatestTag }} \uf412{{ end }} ",
                "type": "git"
             },
             {
@@ -383,6 +383,30 @@
                "type": "rust"
             },
             {
+               "background": "#f6553c",
+               "foreground": "#19191a",
+               "leading_diamond": "",
+               "properties": {
+                  "display_mode": "files",
+                  "fetch_version": true,
+                  "home_enabled": false
+               },
+               "style": "diamond",
+               "template": " {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }}  ",
+               "type": "swift"
+            },
+            {
+               "background": "#cccccc",
+               "foreground": "#19191a",
+               "leading_diamond": "",
+               "properties": {
+                  "http_timeout": 5000
+               },
+               "style": "diamond",
+               "template": " \ue721 {{ .UnityVersion }}{{ if .CSharpVersion }} {{ .CSharpVersion }}{{ end }} ",
+               "type": "unity"
+            },
+            {
                "background": "#19191a",
                "foreground": "#86c623",
                "leading_diamond": "",
@@ -450,7 +474,9 @@
          "overflow": "hide",
          "type": "rprompt",
          "segments": [
-            { "--comment": "—————————————————————[ execution, battery, & date/time ]—————————————————————" },
+            {
+               "--comment": "—————————————————————[ execution, battery, & date/time ]—————————————————————"
+            },
             {
                "foreground": "#903ec3",
                "properties": {
