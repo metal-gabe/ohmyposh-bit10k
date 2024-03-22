@@ -5,7 +5,7 @@
       "background": "transparent",
       "foreground": "#c9c9c9",
       "foreground_templates": ["{{ if gt .Code 0 }}#ef5350{{ end }}"],
-      "template": "\u2500>$"
+      "template": "\u2500❯$ "
    },
    "transient_prompt": {
       "background": "transparent",
