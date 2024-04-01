@@ -3,14 +3,17 @@
    "version": 2,
    "secondary_prompt": {
       "background": "transparent",
-      "foreground": "#c9c9c9",
-      "foreground_templates": ["{{ if gt .Code 0 }}#ef5350{{ end }}"],
-      "template": "\u2500❯$ "
+      "foreground": "#8d5be3",
+      "template": "==❯$ "
    },
    "transient_prompt": {
       "background": "transparent",
       "foreground": "#a89883",
-      "foreground_templates": ["{{ if gt .Code 0 }}#ef5350{{ end }}"],
+      "foreground_templates": [
+         "{{ if eq .Code 0 }}#ef5350{{ end }}",
+         "{{ if eq .Code 1 }}#53c007{{ end }}",
+         "{{ if gt .Code 1 }}#ef5350{{ end }}"
+      ],
       "template": "❯$ "
    },
    "blocks": [
