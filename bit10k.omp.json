@@ -37,14 +37,12 @@
                "--comment": "—————————————————————[ user, host, & ssh ]—————————————————————"
             },
             {
-               "background": "#19191a",
-               "foreground": "#c95110",
-               "foreground_templates": [
-                  "{{ if eq .Name \"pwsh\" }}#4a0336{{ end }}"
-               ],
+               "background": "#c95110",
+               "background_templates": ["{{ if eq .Name \"pwsh\" }}#8d5be3{{ end }}"],
+               "foreground": "#19191a",
                "leading_diamond": "",
                "style": "diamond",
-               "template": " [ {{ .Name }} {{ .Version }} ]",
+               "template": " [ {{ .Name }} {{ .Version }} ] ",
                "trailing_diamond": "",
                "type": "shell"
             },
@@ -52,7 +50,7 @@
                "background": "#19191a",
                "foreground": "#c95110",
                "style": "diamond",
-               "template": "{ <#00c7ff>{{ .UserName }}</> @<#72cba2>{{ .HostName }}</> } ",
+               "template": " { <#00c7ff>{{ .UserName }}</> @<#72cba2>{{ .HostName }}</> } ",
                "trailing_diamond": "",
                "type": "session"
             },
@@ -172,9 +170,7 @@
                   "{{ if .Working.Changed }}#e7c400{{ end }}"
                ],
                "foreground": "#19191a",
-               "foreground_templates": [
-                  "{{ if gt .Ahead 0 }}#000000{{ end }}"
-               ],
+               "foreground_templates": ["{{ if gt .Ahead 0 }}#000000{{ end }}"],
                "properties": {
                   "branch_icon": "\ue725 ",
                   "fetch_status": true,
@@ -484,9 +480,7 @@
                "--comment": "—————————————————————[ exit status ]—————————————————————"
             },
             {
-               "foreground_templates": [
-                  "{{ if .Error }}#e91e63{{ end }}"
-               ],
+               "foreground_templates": ["{{ if .Error }}#e91e63{{ end }}"],
                "foreground": "#00897b",
                "properties": {
                   "always_enabled": true,
@@ -498,9 +492,7 @@
             },
             {
                "foreground": "#53c007",
-               "foreground_templates": [
-                  "{{ if gt .Code 0 }}#ef5350{{ end }}"
-               ],
+               "foreground_templates": ["{{ if gt .Code 0 }}#ef5350{{ end }}"],
                "properties": {
                   "always_enabled": true
                },
