@@ -38,7 +38,9 @@
             },
             {
                "background": "#c95110",
-               "background_templates": ["{{ if eq .Name \"pwsh\" }}#8d5be3{{ end }}"],
+               "background_templates": [
+                  "{{ if eq .Name \"pwsh\" }}#8d5be3{{ end }}"
+               ],
                "foreground": "#19191a",
                "leading_diamond": "",
                "style": "diamond",
@@ -162,15 +164,17 @@
             {
                "background": "#87c723",
                "background_templates": [
-                  "{{ if and (gt .Ahead 0) (gt .Behind 0) }}#9977ff{{ end }}",
+                  "{{ if and (gt .Ahead 0) (gt .Behind 0) }}#00c7ff{{ end }}",
                   "{{ if gt .Behind 0 }}#c777cc{{ end }}",
-                  "{{ if gt .Ahead 0 }}#00c7ff{{ end }}",
-                  "{{ if gt .StashCount 0 }}#aa1133{{ end }}",
+                  "{{ if gt .Ahead 0 }}#aa1133{{ end }}",
+                  "{{ if gt .StashCount 0 }}#936c5c{{ end }}",
                   "{{ if .Staging.Changed }}#e07719{{ end }}",
                   "{{ if .Working.Changed }}#e7c400{{ end }}"
                ],
                "foreground": "#19191a",
-               "foreground_templates": ["{{ if gt .Ahead 0 }}#000000{{ end }}"],
+               "foreground_templates": [
+                  "{{ if gt .Ahead 0 }}#000000{{ end }}"
+               ],
                "properties": {
                   "branch_icon": "\ue725 ",
                   "fetch_status": true,
@@ -480,7 +484,9 @@
                "--comment": "—————————————————————[ exit status ]—————————————————————"
             },
             {
-               "foreground_templates": ["{{ if .Error }}#e91e63{{ end }}"],
+               "foreground_templates": [
+                  "{{ if .Error }}#e91e63{{ end }}"
+               ],
                "foreground": "#00897b",
                "properties": {
                   "always_enabled": true,
@@ -492,7 +498,9 @@
             },
             {
                "foreground": "#53c007",
-               "foreground_templates": ["{{ if gt .Code 0 }}#ef5350{{ end }}"],
+               "foreground_templates": [
+                  "{{ if gt .Code 0 }}#ef5350{{ end }}"
+               ],
                "properties": {
                   "always_enabled": true
                },
