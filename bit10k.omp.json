@@ -1,5 +1,5 @@
 {
-   "LAST UPDATED": "19-Nov-2024 @ 10:28 on vadr-mn",
+   "LAST UPDATED": "08-Dec-2025 @ 23:05 on vadr-mn",
    "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
    "version": 3,
    "secondary_prompt": {
@@ -19,7 +19,7 @@
    },
    "blocks": [
       {
-         "--comment": "—————————————————————[ BLOCK 1: USER INFO ]—————————————————————"
+         "--comment": "*************************[ BLOCK 1: USER INFO ]*************************"
       },
       {
          "alignment": "left",
@@ -83,7 +83,7 @@
          ]
       },
       {
-         "--comment": "—————————————————————[ BLOCK 2: CLOUD INFO ]—————————————————————"
+         "--comment": "*************************[ BLOCK 2: CLOUD INFO ]*************************"
       },
       {
          "alignment": "right",
@@ -152,7 +152,7 @@
          ]
       },
       {
-         "--comment": "—————————————————————[ BLOCK 3: WORKING INFO ]—————————————————————"
+         "--comment": "*************************[ BLOCK 3: WORKING INFO ]*************************"
       },
       {
          "alignment": "left",
@@ -248,7 +248,7 @@
          ]
       },
       {
-         "--comment": "—————————————————————[ BLOCK 4: LANGUAGE INFO ]—————————————————————"
+         "--comment": "*************************[ BLOCK 4: LANGUAGE INFO ]*************************"
       },
       {
          "alignment": "right",
@@ -536,6 +536,34 @@
                "type": "unity"
             },
             {
+               "background": "#ffc231",
+               "foreground": "#cccccc",
+               "leading_diamond": "\ue0b2",
+               "--leading_diamond": "",
+               "properties": {
+                  "cache_duration": "168h",
+                  "display_mode": "context",
+                  "fetch_version": true,
+                  "http_timeout": 5000
+               },
+               "style": "diamond",
+               "template": " {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} ",
+               "type": "tauri"
+            },
+            {
+               "background": "#5c4fe5",
+               "foreground": "#cccccc",
+               "leading_diamond": "\ue0b2",
+               "--leading_diamond": "",
+               "properties": {
+                  "cache_duration": "168h",
+                  "http_timeout": 5000
+               },
+               "style": "diamond",
+               "template": " {{ .WorkspaceName }}{{ if .Version }} {{ .Version }}{{ end }} ",
+               "type": "terraform"
+            },
+            {
                "background": "#19191a",
                "foreground": "#86c623",
                "leading_diamond": "",
@@ -573,7 +601,7 @@
          ]
       },
       {
-         "--comment": "—————————————————————[ BLOCK 5: USER ENTRY ]—————————————————————"
+         "--comment": "*************************[ BLOCK 5: USER ENTRY ]*************************"
       },
       {
          "alignment": "left",
@@ -622,7 +650,7 @@
          ]
       },
       {
-         "--comment": "—————————————————————[ BLOCK 6: STATUS INFO ]—————————————————————"
+         "--comment": "*************************[ BLOCK 6: STATUS INFO ]*************************"
       },
       {
          "alignment": "right",
