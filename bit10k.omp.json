@@ -1,5 +1,5 @@
 {
-   "LAST UPDATED": "11-Dec-2025 @ 23:39 PST on vadr-mn",
+   "LAST UPDATED": "12-Dec-2025 @ 00:20 PST on vadr-mn",
    "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
    "version": 4,
    "secondary_prompt": {
@@ -36,7 +36,7 @@
                "type": "session"
             },
             {
-               "--comment": "—————————————————————[ user, host, & ssh ]—————————————————————"
+               "--comment": "—————————————————————[ user, host, pulumi, & ssh ]—————————————————————"
             },
             {
                "background": "#c95110",
@@ -58,6 +58,16 @@
                "trailing_diamond": "\ue0b0",
                "--trailing_diamond": "",
                "type": "session"
+            },
+            {
+               "background": "#662d91",
+               "foreground": "#ffffff",
+               "powerline_symbol": "",
+               "style": "diamond",
+               "template": "{{ .Stack }}{{if .User }} :: {{ .User }}@{{ end }}{{ if .URL }}{{ .URL }}{{ end }}",
+               "trailing_diamond": "\ue0b0",
+               "--trailing_diamond": "",
+               "type": "pulumi"
             },
             {
                "background": "#c386f1",
@@ -146,7 +156,7 @@
                "type": "session"
             },
             {
-               "--comment": "—————————————————————[ os, path, & git ]—————————————————————"
+               "--comment": "—————————————————————[ os, path, jujutsu, & git ]—————————————————————"
             },
             {
                "background": "#19191a",
@@ -178,6 +188,18 @@
                "trailing_diamond": "\ue0b0",
                "--trailing_diamond": "",
                "type": "path"
+            },
+            {
+               "background": "#ffeb3b",
+               "foreground": "#193549",
+               "options": {
+                  "fetch_status": true,
+                  "ignore_working_copy": false
+               },
+               "style": "diamond",
+               "trailing_diamond": "\ue0b0",
+               "--trailing_diamond": "",
+               "type": "jujutsu"
             },
             {
                "background": "#87c723",
