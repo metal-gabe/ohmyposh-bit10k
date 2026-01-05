@@ -1,5 +1,5 @@
 {
-   "LAST UPDATED": "12-Dec-2025 @ 00:20 PST on vadr-mn",
+   "LAST UPDATED": "04-Jan-2026 @ 18:53 PST on 'vadr-mn' (vscode)",
    "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
    "version": 4,
    "secondary_prompt": {
@@ -40,12 +40,20 @@
             },
             {
                "background": "#c95110",
-               "background_templates": ["{{ if eq .Name \"pwsh\" }}#8d5be3{{ end }}"],
+               "background_templates": [
+                  "{{ if eq .Name \"nu\" }}#3ed68c{{ end }}",
+                  "{{ if eq .Name \"pwsh\" }}#8d5be3{{ end }}"
+               ],
                "foreground": "#19191a",
                "leading_diamond": "\ue0b6",
                "--leading_diamond": "",
+               "options": {
+                  "mapped_shell_names": {
+                     "shell": "nu"
+                  }
+               },
                "style": "diamond",
-               "template": " [ {{ .Name }} {{ .Version }} ] ",
+               "template": " [ {{ .Name }} {{ if .Version }}{{ .Version }}{{ else }}v???{{ end }} ] ",
                "trailing_diamond": "\ue0b0",
                "--trailing_diamond": "",
                "type": "shell"
@@ -64,7 +72,7 @@
                "foreground": "#ffffff",
                "powerline_symbol": "",
                "style": "diamond",
-               "template": "{{ .Stack }}{{if .User }} :: {{ .User }}@{{ end }}{{ if .URL }}{{ .URL }}{{ end }}",
+               "template": "{{ .Stack }}{{ if .User }} :: {{ .User }}@{{ end }}{{ if .URL }}{{ .URL }}{{ end }}",
                "trailing_diamond": "\ue0b0",
                "--trailing_diamond": "",
                "type": "pulumi"
